@@ -37,7 +37,7 @@
 		</property>
 	</bean>
 	
-	<bean name="customer"
+	<!--  <bean name="customer"
 		class="com.samples.S01springcoredi.Customer" p:id="37">
 		<property name="products">
 			<map>
@@ -48,7 +48,11 @@
 				<entry key="500" value="Keyboard" />
 			</map>
 		</property>
-	</bean>
+	</bean> -->
+	<bean name="items" class="com.samples.S01springcoredi.Item" p:id="1" p:name="iphone" p:price="115000" p:quantity="1" />
+	
+	<bean name="shoppingcart" class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="items"/>
+	
 
 
 </beans>

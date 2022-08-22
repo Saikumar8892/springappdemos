@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.samples</groupId>
-  <artifactId>S01springcoredi</artifactId>
+  <artifactId>S02Autowiring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>S01springcoredi</name>
+  <name>S02Autowiring</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -16,10 +16,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <springframework.version>4.3.6.RELEASE</springframework.version>
+     <springframework.version>4.3.6.RELEASE</springframework.version>
   </properties>
-
-  <dependencies>
+   <dependencies>
   <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
 <dependency>
     <groupId>javax.annotation</groupId>

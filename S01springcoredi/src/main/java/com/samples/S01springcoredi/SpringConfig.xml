@@ -8,22 +8,21 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="emp" class="com.samples.S01springcoredi.Employee" p:id="22" p:name="sai kumar">
-		
+	<bean name="emp" class="com.samples.S01springcoredi.Employee"
+		p:id="22" p:name="John">
+		<property name="address">
+			<bean class="com.samples.S01springcoredi.Address"
+				p:houseNumber="123" p:street="main street" p:city="NY" />
+		</property>
 	</bean>
-	
+
 	<bean name="hospital" class="com.samples.S01springcoredi.Hospital">
-	<property name="name" value="Global Hosipitals"/>
-	<property name="departments">
-	<list>
-	<value>Reception</value>
-	<value>Emergency</value>
-	<value>Out-Patient</value>
-	</list>
-	</property>
-	
+		<property name="name" value="Global Hospitals" />
+		<property name="departments">
+			<value>Casualty</value>
+		</property>
 	</bean>
-	
+
 	<bean name="cardealer"
 		class="com.samples.S01springcoredi.CarDealer">
 		<property name="name" value="ABC Motors" />
@@ -36,9 +35,10 @@
 			</set>
 		</property>
 	</bean>
-	
-	<!--  <bean name="customer"
-		class="com.samples.S01springcoredi.Customer" p:id="37">
+
+
+	<bean name="customer" class="com.samples.S01springcoredi.Customer"
+		p:id="37">
 		<property name="products">
 			<map>
 				<entry key="100" value="IPhone" />
@@ -48,11 +48,35 @@
 				<entry key="500" value="Keyboard" />
 			</map>
 		</property>
-	</bean> -->
-	<bean name="items" class="com.samples.S01springcoredi.Item" p:id="1" p:name="iphone" p:price="115000" p:quantity="1" />
-	
-	<bean name="shoppingcart" class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="items"/>
-	
+	</bean>
 
+	<bean name="countries"
+		class="com.samples.S01springcoredi.CountriesAndLanguages">
+		<property name="countryLanguages">
+			<props>
+				<prop key="USA">English</prop>
+				<prop key="Canada">French</prop>
+				<prop key="Germany">German</prop>
+				<prop key="Japan">Japanese</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean name="scores" class="com.samples.S01springcoredi.Scores"
+		p:math="80" p:physics="87" p:chemistry="76" />
+
+	<!-- <bean name="student" class="com.samples.S01springcoredi.Student"> <property 
+		name="scores"> <ref bean="scores" /> </property> </bean> -->
+
+	<!-- <bean name="student" class="com.samples.S01springcoredi.Student"> <property 
+		name="scores" ref="scores" /> </bean> -->
+
+	<bean name="student" class="com.samples.S01springcoredi.Student"
+		p:scores-ref="scores" />
+
+	<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" />
+
+	<context:annotation-config />
 
 </beans>

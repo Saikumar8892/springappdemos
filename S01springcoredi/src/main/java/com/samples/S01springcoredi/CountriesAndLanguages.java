@@ -3,7 +3,7 @@ package com.samples.S01springcoredi;
 import java.util.Properties;
 
 public class CountriesAndLanguages {
- 
+
 	private Properties countryLanguages;
 
 	public Properties getCountryLanguages() {
@@ -18,6 +18,5 @@ public class CountriesAndLanguages {
 	public String toString() {
 		return "CountriesAndLanguages [countryLanguages=" + countryLanguages + "]";
 	}
-	
 	
 }
